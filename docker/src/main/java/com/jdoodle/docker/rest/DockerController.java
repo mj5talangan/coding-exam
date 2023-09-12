@@ -58,7 +58,7 @@ public class DockerController {
                     .endMetadata()
                     .withNewSpec()
                     .addNewContainer()
-                    .withName("kubernetes-container")
+                    .withName("nginx-container-final")
                     .withImage("my-nginx:latest")
                     .endContainer()
                     .endSpec()
