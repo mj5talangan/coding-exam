@@ -28,7 +28,7 @@ public class DockerController {
     @GetMapping("/create-start-docker-nginx")
     String startDocker() {
         String startDocker = "";
-        String[] command = {"docker", "start", "my-nginx:latest"};
+        String[] command = {"docker", "start", "nginx-container-final"};
         startDocker = shellUtil.processBuilder(command);
         if (startDocker.isEmpty()) {
             String[] commandRun = {"docker", "run", "-d", "--name", "nginx-container-final", "-p", "8083:80", "my-nginx:latest"};
@@ -39,7 +39,7 @@ public class DockerController {
 
     @GetMapping("/stop-docker-nginx")
     String stopDocker() {
-        String[] command = {"docker", "stop", "my-nginx:latest"};
+        String[] command = {"docker", "stop", "nginx-container-final"};
         return shellUtil.processBuilder(command);
     }
 
